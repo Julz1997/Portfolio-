@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Image</title>
+    <style>
+        body {
+            background-image: url('./img/DUNE\ blackWhite.jpg'); /* Default background image */
+           
+         height: 100%;
+   margin: 0;
+   background-color: #f3e9e9;
+   background-repeat: fill;
+   background-position: center;
+   background-size: cover;
+        }
+        button {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="changeButton">Change Background Image</button>
+
+    <script>
+        // JavaScript code to change the background image
+        const button = document.getElementById('changeButton');
+        const body = document.body;
+
+        const images = [
+            './img/DUNE\ blackWhite.jpg',
+            './/img/DUNE.jpg',
+           
+           ];
+
+        let currentImageIndex = 0;
+
+        button.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            const newImageUrl = images[currentImageIndex];
+            body.style.backgroundImage = `url('${newImageUrl}')`;
+        });
+    </script>
+</body>
+</html>
